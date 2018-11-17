@@ -16,13 +16,17 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   
   var isPlayersMove: Bool! = false
   
-  var score: Int = 0
+  var level: Int = 1
+  
+  var highScore: Int = 0
   
   var player: AVAudioPlayer!
   
   var pushed: Int = 0
   
   @IBOutlet weak var lblScore: UILabel!
+  
+  @IBOutlet weak var lblHighScore: UILabel!
   
   @IBOutlet weak var btnStart: UIButton!
   
@@ -32,6 +36,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
     reset()
     sender.isEnabled = false
     sender.setTitle("", for: .normal)
+    enablePushButtons(value: true)
     computersMove()
   }
   
@@ -50,8 +55,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   
   func handOver(){
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-      self.score += 1
-      self.score(score: self.score, gameover: false)
+      self.level += 1
+      self.score(score: self.level, gameover: false)
       self.computersMove()
       return
     }
@@ -67,15 +72,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
     if btn == moves[move]{
       if move == moves.count-1
       {
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
           self.handOver()
         }
-        
       }
       move += 1
     } else {
-      score(score: score, gameover: true)
+      score(score: level, gameover: true)
       reset()
       return
     }
@@ -99,7 +102,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   func playersTurn(value: Bool){
     move = 0
     isPlayersMove = value
-    enablePushButtons(value: value)
   }
   
   func enablePushButtons(value: Bool){
@@ -113,7 +115,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
     if !isPlayersMove{
       playSequence()
     }
-    
   }
   
   func computersMove() {
@@ -134,15 +135,24 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   
   func score(score: Int, gameover: Bool){
     if !gameover {
-      lblScore.text = "SCORE: \(score)"
+      lblScore.text = "TRY LEVEL: \(level)"
+      lblHighScore.text = "High Score: \(highScore)"
+
+      if (level > highScore){
+        highScore = level
+      }
     }
     else {
-      lblScore.text = "SCORE: \(score) GAME OVER"
+      lblScore.text = "FAILED AT LEVEL: \(level)"
+      if (level == highScore){
+        UserDefaults.standard.set(highScore, forKey: "HIGHSCORE")
+      }
+      reset()
     }
   }
   
   func reset() {
-    score = 0
+    level = 1
     moves=[]
     enablePushButtons(value: false)
     btnStart.isEnabled = true
@@ -155,5 +165,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
     // Do any additional setup after loading the view, typically from a nib.
     reset()
     btnStart.layer.cornerRadius = 35
+    highScore = UserDefaults.standard.integer(forKey: "HIGHSCORE")
+    score(score: level, gameover: false)
   }
 }

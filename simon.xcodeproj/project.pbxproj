@@ -42,10 +42,6 @@
 		F9A88908219FF9840038D4FF /* Icon-Small-40.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A888D5219FF9830038D4FF /* Icon-Small-40.png */; };
 		F9A88909219FF9840038D4FF /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A888D6219FF9830038D4FF /* Icon-Small@2x.png */; };
 		F9A8890A219FF9840038D4FF /* 2p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A888D7219FF9830038D4FF /* 2p@3x.png */; };
-		F9A8890B219FF9840038D4FF /* 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9A888D9219FF9830038D4FF /* 4.wav */; };
-		F9A8890C219FF9840038D4FF /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9A888DA219FF9830038D4FF /* 1.wav */; };
-		F9A8890D219FF9840038D4FF /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9A888DB219FF9830038D4FF /* 3.wav */; };
-		F9A8890E219FF9840038D4FF /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9A888DC219FF9830038D4FF /* 2.wav */; };
 		F9A8890F219FF9840038D4FF /* 2p.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A888DD219FF9830038D4FF /* 2p.png */; };
 		F9A88910219FF9840038D4FF /* 1p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A888DE219FF9830038D4FF /* 1p@2x.png */; };
 		F9A88911219FF9840038D4FF /* 2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A888DF219FF9830038D4FF /* 2@3x.png */; };
@@ -57,10 +53,10 @@
 		F9A88917219FF9840038D4FF /* 3p.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A888E5219FF9840038D4FF /* 3p.png */; };
 		F9A88918219FF9840038D4FF /* 1p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A888E6219FF9840038D4FF /* 1p@3x.png */; };
 		F9A88919219FF9840038D4FF /* 0p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A888E7219FF9840038D4FF /* 0p@3x.png */; };
-		F9B475FD219ECFF500F80B46 /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9B475F9219ECFF400F80B46 /* 0.wav */; };
-		F9B475FE219ECFF500F80B46 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9B475FA219ECFF400F80B46 /* 1.wav */; };
-		F9B475FF219ECFF500F80B46 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9B475FB219ECFF400F80B46 /* 3.wav */; };
-		F9B47600219ECFF500F80B46 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9B475FC219ECFF500F80B46 /* 2.wav */; };
+		F9B5383321A0C4D100835316 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9B5382F21A0C4D100835316 /* 1.wav */; };
+		F9B5383421A0C4D100835316 /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9B5383021A0C4D100835316 /* 0.wav */; };
+		F9B5383521A0C4D100835316 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9B5383121A0C4D100835316 /* 2.wav */; };
+		F9B5383621A0C4D100835316 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9B5383221A0C4D100835316 /* 3.wav */; };
 		F9ECA235219E8B8800D87295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECA234219E8B8800D87295 /* AppDelegate.swift */; };
 		F9ECA237219E8B8800D87295 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECA236219E8B8800D87295 /* ViewController.swift */; };
 		F9ECA23A219E8B8800D87295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9ECA238219E8B8800D87295 /* Main.storyboard */; };
@@ -123,10 +119,6 @@
 		F9A888D5219FF9830038D4FF /* Icon-Small-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-40.png"; sourceTree = "<group>"; };
 		F9A888D6219FF9830038D4FF /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		F9A888D7219FF9830038D4FF /* 2p@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2p@3x.png"; sourceTree = "<group>"; };
-		F9A888D9219FF9830038D4FF /* 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 4.wav; sourceTree = "<group>"; };
-		F9A888DA219FF9830038D4FF /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
-		F9A888DB219FF9830038D4FF /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
-		F9A888DC219FF9830038D4FF /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
 		F9A888DD219FF9830038D4FF /* 2p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2p.png; sourceTree = "<group>"; };
 		F9A888DE219FF9830038D4FF /* 1p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1p@2x.png"; sourceTree = "<group>"; };
 		F9A888DF219FF9830038D4FF /* 2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2@3x.png"; sourceTree = "<group>"; };
@@ -138,10 +130,10 @@
 		F9A888E5219FF9840038D4FF /* 3p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3p.png; sourceTree = "<group>"; };
 		F9A888E6219FF9840038D4FF /* 1p@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1p@3x.png"; sourceTree = "<group>"; };
 		F9A888E7219FF9840038D4FF /* 0p@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0p@3x.png"; sourceTree = "<group>"; };
-		F9B475F9219ECFF400F80B46 /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0.wav; sourceTree = "<group>"; };
-		F9B475FA219ECFF400F80B46 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
-		F9B475FB219ECFF400F80B46 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
-		F9B475FC219ECFF500F80B46 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		F9B5382F21A0C4D100835316 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
+		F9B5383021A0C4D100835316 /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 0.wav; path = ../../../SoundMemory/SoundMemory/0.wav; sourceTree = "<group>"; };
+		F9B5383121A0C4D100835316 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		F9B5383221A0C4D100835316 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
 		F9ECA231219E8B8800D87295 /* simon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9ECA234219E8B8800D87295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9ECA236219E8B8800D87295 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +177,10 @@
 		F9A888B3219FF95A0038D4FF /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				F9B5383021A0C4D100835316 /* 0.wav */,
+				F9B5382F21A0C4D100835316 /* 1.wav */,
+				F9B5383121A0C4D100835316 /* 2.wav */,
+				F9B5383221A0C4D100835316 /* 3.wav */,
 				F9A888C3219FF9830038D4FF /* App Icon [Squared] */,
 				F9A888E4219FF9840038D4FF /* 2.png */,
 				F9A888BD219FF9830038D4FF /* 2@2x.png */,
@@ -207,7 +203,6 @@
 				F9A888BC219FF9830038D4FF /* 0p.png */,
 				F9A888BA219FF9820038D4FF /* 0p@2x.png */,
 				F9A888E7219FF9840038D4FF /* 0p@3x.png */,
-				F9A888D8219FF9830038D4FF /* Soundfiles */,
 				F9A888B5219FF9820038D4FF /* 1.png */,
 				F9A888BE219FF9830038D4FF /* 1@2x.png */,
 				F9A888B4219FF9820038D4FF /* 1@3x.png */,
@@ -244,17 +239,6 @@
 			path = "App Icon [Squared]";
 			sourceTree = "<group>";
 		};
-		F9A888D8219FF9830038D4FF /* Soundfiles */ = {
-			isa = PBXGroup;
-			children = (
-				F9A888D9219FF9830038D4FF /* 4.wav */,
-				F9A888DA219FF9830038D4FF /* 1.wav */,
-				F9A888DB219FF9830038D4FF /* 3.wav */,
-				F9A888DC219FF9830038D4FF /* 2.wav */,
-			);
-			path = Soundfiles;
-			sourceTree = "<group>";
-		};
 		F9ECA228219E8B8800D87295 = {
 			isa = PBXGroup;
 			children = (
@@ -284,10 +268,6 @@
 				F9ECA238219E8B8800D87295 /* Main.storyboard */,
 				F9ECA23B219E8B8900D87295 /* Assets.xcassets */,
 				F9ECA23D219E8B8900D87295 /* LaunchScreen.storyboard */,
-				F9B475F9219ECFF400F80B46 /* 0.wav */,
-				F9B475FA219ECFF400F80B46 /* 1.wav */,
-				F9B475FC219ECFF500F80B46 /* 2.wav */,
-				F9B475FB219ECFF400F80B46 /* 3.wav */,
 				F9ECA240219E8B8900D87295 /* Info.plist */,
 			);
 			path = simon;
@@ -415,7 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9B475FF219ECFF500F80B46 /* 3.wav in Resources */,
+				F9B5383421A0C4D100835316 /* 0.wav in Resources */,
 				F9A888E9219FF9840038D4FF /* 1.png in Resources */,
 				F9A88906219FF9840038D4FF /* Icon-Small@3x.png in Resources */,
 				F9A88910219FF9840038D4FF /* 1p@2x.png in Resources */,
@@ -423,11 +403,9 @@
 				F9A888F2219FF9840038D4FF /* 1@2x.png in Resources */,
 				F9A8890A219FF9840038D4FF /* 2p@3x.png in Resources */,
 				F9A888F9219FF9840038D4FF /* Icon-Small.png in Resources */,
-				F9A8890D219FF9840038D4FF /* 3.wav in Resources */,
 				F9A888F0219FF9840038D4FF /* 0p.png in Resources */,
 				F9A88912219FF9840038D4FF /* 3p@2x.png in Resources */,
 				F9A888F3219FF9840038D4FF /* 2p@2x.png in Resources */,
-				F9B475FE219ECFF500F80B46 /* 1.wav in Resources */,
 				F9ECA23F219E8B8900D87295 /* LaunchScreen.storyboard in Resources */,
 				F9A888F1219FF9840038D4FF /* 2@2x.png in Resources */,
 				F9A88903219FF9840038D4FF /* Icon@2x.png in Resources */,
@@ -435,15 +413,12 @@
 				F9A88911219FF9840038D4FF /* 2@3x.png in Resources */,
 				F9A88908219FF9840038D4FF /* Icon-Small-40.png in Resources */,
 				F9A88909219FF9840038D4FF /* Icon-Small@2x.png in Resources */,
-				F9B475FD219ECFF500F80B46 /* 0.wav in Resources */,
 				F9A888F7219FF9840038D4FF /* Icon.png in Resources */,
 				F9A888EF219FF9840038D4FF /* play@2x.png in Resources */,
-				F9B47600219ECFF500F80B46 /* 2.wav in Resources */,
 				F9A888F6219FF9840038D4FF /* play@3x.png in Resources */,
 				F9ECA23C219E8B8900D87295 /* Assets.xcassets in Resources */,
 				F9A88915219FF9840038D4FF /* 3@2x.png in Resources */,
 				F9A888F4219FF9840038D4FF /* 3p@3x.png in Resources */,
-				F9A8890C219FF9840038D4FF /* 1.wav in Resources */,
 				F9A88913219FF9840038D4FF /* 3@3x.png in Resources */,
 				F9A88916219FF9840038D4FF /* 2.png in Resources */,
 				F9A888FE219FF9840038D4FF /* Icon-Small-40@3x.png in Resources */,
@@ -452,22 +427,23 @@
 				F9A888EA219FF9840038D4FF /* 3.png in Resources */,
 				F9A88907219FF9840038D4FF /* Icon-Small-50.png in Resources */,
 				F9A888FB219FF9840038D4FF /* Icon-76.png in Resources */,
-				F9A8890B219FF9840038D4FF /* 4.wav in Resources */,
 				F9A888F5219FF9840038D4FF /* play.png in Resources */,
 				F9A888EB219FF9840038D4FF /* 0@3x.png in Resources */,
 				F9A888FD219FF9840038D4FF /* Icon-Small-40@2x.png in Resources */,
+				F9B5383621A0C4D100835316 /* 3.wav in Resources */,
 				F9A888EE219FF9840038D4FF /* 0p@2x.png in Resources */,
 				F9A888EC219FF9840038D4FF /* 0.png in Resources */,
 				F9A88917219FF9840038D4FF /* 3p.png in Resources */,
 				F9ECA23A219E8B8800D87295 /* Main.storyboard in Resources */,
+				F9B5383521A0C4D100835316 /* 2.wav in Resources */,
 				F9A888FA219FF9840038D4FF /* Icon-60@3x.png in Resources */,
 				F9A888E8219FF9840038D4FF /* 1@3x.png in Resources */,
+				F9B5383321A0C4D100835316 /* 1.wav in Resources */,
 				F9A888FF219FF9840038D4FF /* Icon-Small-50@2x.png in Resources */,
 				F9A888F8219FF9840038D4FF /* Icon-76@2x.png in Resources */,
 				F9A88904219FF9840038D4FF /* iTunesArtwork@2x.png in Resources */,
 				F9A88900219FF9840038D4FF /* Icon-72.png in Resources */,
 				F9A88914219FF9840038D4FF /* 1p.png in Resources */,
-				F9A8890E219FF9840038D4FF /* 2.wav in Resources */,
 				F9A888FC219FF9840038D4FF /* Icon-60.png in Resources */,
 				F9A888ED219FF9840038D4FF /* 0@2x.png in Resources */,
 				F9A88905219FF9840038D4FF /* Icon-167.png in Resources */,
@@ -673,7 +649,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D95TQJVNK2;
 				INFOPLIST_FILE = simon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -690,7 +668,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D95TQJVNK2;
 				INFOPLIST_FILE = simon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
