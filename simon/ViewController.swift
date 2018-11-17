@@ -31,6 +31,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   @IBAction func btnStartPressed(_ sender: UIButton){
     reset()
     sender.isEnabled = false
+    sender.setTitle("", for: .normal)
     computersMove()
   }
   
@@ -145,6 +146,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
     moves=[]
     enablePushButtons(value: false)
     btnStart.isEnabled = true
+    btnStart.setTitle("PLAY", for: .normal)
     isPlayersMove = false
   }
   
