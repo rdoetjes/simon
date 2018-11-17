@@ -12,12 +12,15 @@ import AVFoundation
 class ViewController: UIViewController, AVAudioPlayerDelegate
 {
   var moves: [Int] = []
-  var isPlayersMove: Bool! = false
-  var score: Int = 0
   var move: Int = 0
+  
+  var isPlayersMove: Bool! = false
+  
+  var score: Int = 0
+  
   var player: AVAudioPlayer!
-  var donePlaying: Bool! = true
-  var a: UIColor?
+  
+  var pushed: Int = 0
   
   @IBOutlet weak var lblScore: UILabel!
   
@@ -25,132 +28,128 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   
   @IBOutlet var pushButtons: [UIButton]!
   
-  @IBAction func btnStartPressed(_ sender: UIButton)
-  {
+  @IBAction func btnStartPressed(_ sender: UIButton){
     reset()
     sender.isEnabled = false
-    computerTurn()
+    computersMove()
   }
   
-  @IBAction func pushButtonPressed(_ sender: UIButton)
-  {
-    let playerPressed = sender.tag
-    playButtonSound(btn: playerPressed)
-    
-    a = pushButtons[playerPressed].backgroundColor
-    pushButtons[playerPressed].backgroundColor = UIColor.white
-    self.view.setNeedsDisplay()
-    
-    usleep(3000)
-    
-    if isPlayersMove && playerPressed != moves[move]{
-      gameOver()
+  @IBAction func pushButtonPressed(_ sender: UIButton){
+    pushed = sender.tag
+    let  c =  sender.backgroundColor
+    sender.backgroundColor = UIColor.white
+    playSound(btn: sender.tag)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      sender.backgroundColor = c
+      if self.isPlayersMove{
+        self.checkMove(btn: sender.tag)
+      }
     }
-    else if isPlayersMove
-    {
-      print(move, moves)
-      checkPlayersMove(btn: moves[move])
-      move += 1
-    }
-    else
-    {
-      move += 1
-    }
-    
-    pushButtons[playerPressed].backgroundColor = a
-    self.view.setNeedsDisplay()
-    
   }
   
-  func setScore()
-  {
-    lblScore.text = "SCORE: \(score)"
-  }
-  
-  func checkPlayersMove(btn: Int){
-    
-    if btn != moves[move]
-    {
-      gameOver()
-      return
-    }
-    
-    if move == moves.count-1
-    {
-      score += 1
-      setScore()
-      computerTurn()
+  func handOver(){
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+      self.score += 1
+      self.score(score: self.score, gameover: false)
+      self.computersMove()
       return
     }
   }
   
-  func gameOver()
-  {
-    playersTurn(value: false)
-    lblScore.text="SCORE: \(score) GAME OVER"
-    btnStart.isEnabled = true
-    moves = []
+  func checkMove(btn: Int){
+    //prevents possible bouncing of pressing button too fast on last digit
+    if move>moves.count-1{
+      print("bounce")
+      handOver()
+      return
+    }
+    
+    if btn == moves[move]{
+      if move == moves.count-1
+      {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+          self.handOver()
+        }
+        
+      }
+      move += 1
+    } else {
+      score(score: score, gameover: true)
+      reset()
+      return
+    }
   }
   
-  func playButtonSound(btn: Int)
-  {
-    guard let url = Bundle.main.url(forResource: "\(btn)", withExtension: "wav") else { return }
-    donePlaying = false
+  func playSound(btn: Int){
+    let soundFilePath = Bundle.main.path(forResource: "\(btn)", ofType: "wav")
+    let soundFileURL = NSURL(fileURLWithPath: soundFilePath!)
+    
     do {
-      player = try AVAudioPlayer(contentsOf: url)
+      try player = AVAudioPlayer(contentsOf: soundFileURL as URL)
       player.delegate = self
+      player.prepareToPlay()
       player.numberOfLoops = 0
       player.play()
-    } catch let error as NSError {
-      print(error.description)
+    }catch {
+      print(error)
     }
   }
   
-  func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool)
-  {
-    donePlaying = true
-  }
-  
-  func playSequence(){
-    print(move, moves)
-    for move in moves
-    {
-      //pushButtons[moves[move]].sendActions(for: .touchUpInside)
-    }
-    
-    playersTurn(value: true)
-    
-  }
-  
-  func computerTurn()
-  {
+  func playersTurn(value: Bool){
     move = 0
+    isPlayersMove = value
+    enablePushButtons(value: value)
+  }
+  
+  func enablePushButtons(value: Bool){
+    for btn in pushButtons {
+      btn.isEnabled = value
+    }
+  }
+  
+  func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    
+    if !isPlayersMove{
+      playSequence()
+    }
+    
+  }
+  
+  func computersMove() {
     playersTurn(value: false)
-    moves.append(Int.random(in: 0 ..< 4))
-    print(moves)
+    moves.append( Int.random(in: 0 ... 3) )
+    move = 0
     playSequence()
   }
   
-  func playersTurn(value: Bool)
-  {
-    move = 0
-    isPlayersMove = value
-    for i in 0...3
-    {
-      pushButtons[i].isEnabled = value
+  func playSequence() {
+    if move <= moves.count-1 {
+      pushButtons[moves[move]].sendActions(for: .touchUpInside)
+      move += 1
+    } else {
+      playersTurn(value: true)
     }
   }
   
-  func reset()
-  {
-    score = 0
-    moves = []
-    setScore()
-    btnStart.isEnabled = true
+  func score(score: Int, gameover: Bool){
+    if !gameover {
+      lblScore.text = "SCORE: \(score)"
+    }
+    else {
+      lblScore.text = "SCORE: \(score) GAME OVER"
+    }
   }
   
-  override func viewDidLoad()
-  {
+  func reset() {
+    score = 0
+    moves=[]
+    enablePushButtons(value: false)
+    btnStart.isEnabled = true
+    isPlayersMove = false
+  }
+  
+  override func viewDidLoad(){
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     reset()

@@ -33,18 +33,18 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="n9O-1F-b7W">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="285"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyo-Vr-EvE">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyo-Vr-EvE">
                                                         <rect key="frame" x="0.0" y="0.0" width="185" height="285"/>
                                                         <color key="backgroundColor" red="0.010483784100000001" green="0.64736479920000001" blue="0.0040078913069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" image="red.png"/>
                                                         <connections>
                                                             <action selector="pushButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P8Z-l6-3cn"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xk-Jp-evU">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xk-Jp-evU">
                                                         <rect key="frame" x="190" y="0.0" width="185" height="285"/>
                                                         <color key="backgroundColor" red="1" green="0.0076169421460000001" blue="0.10509220800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" image="yellow.png"/>
                                                         <connections>
                                                             <action selector="pushButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSX-5s-u8L"/>
                                                         </connections>
@@ -58,18 +58,18 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="M9v-zf-YtM">
                                                 <rect key="frame" x="0.0" y="290" width="375" height="285"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hca-4H-MeN">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hca-4H-MeN">
                                                         <rect key="frame" x="0.0" y="0.0" width="185" height="285"/>
                                                         <color key="backgroundColor" red="0.92872683270158118" green="0.97117875647668395" blue="0.22964938942794935" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" image="green.png"/>
                                                         <connections>
                                                             <action selector="pushButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3gO-2s-DfO"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhe-Vq-CPl">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhe-Vq-CPl">
                                                         <rect key="frame" x="190" y="0.0" width="185" height="285"/>
                                                         <color key="backgroundColor" red="0.20056661092579756" green="0.22686241946508751" blue="0.77115042098445596" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" image="blue.png"/>
                                                         <connections>
                                                             <action selector="pushButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zEv-Ir-hk6"/>
                                                         </connections>
@@ -133,4 +133,10 @@
             <point key="canvasLocation" x="134.48275862068968" y="132"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blue.png" width="166" height="166"/>
+        <image name="green.png" width="165" height="166"/>
+        <image name="red.png" width="165" height="165"/>
+        <image name="yellow.png" width="166" height="165"/>
+    </resources>
 </document>
