@@ -36,11 +36,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   
   @IBAction func pushButtonPressed(_ sender: UIButton){
     pushed = sender.tag
-    let  c =  sender.backgroundColor
-    sender.backgroundColor = UIColor.white
+    //let  c =  sender.backgroundColor
+    sender.setImage(UIImage(named: "\(sender.tag)p"), for: .normal)
     playSound(btn: sender.tag)
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-      sender.backgroundColor = c
+      sender.setImage(UIImage(named: "\(sender.tag)"), for: .normal)
       if self.isPlayersMove{
         self.checkMove(btn: sender.tag)
       }
@@ -57,9 +57,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   }
   
   func checkMove(btn: Int){
-    //prevents possible bouncing of pressing button too fast on last digit
+    //prevents index out of bound by possible bouncing and out of game presses
     if move>moves.count-1{
-      print("bounce")
       handOver()
       return
     }
@@ -104,7 +103,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   
   func enablePushButtons(value: Bool){
     for btn in pushButtons {
-      btn.isEnabled = value
+      btn.isUserInteractionEnabled = value
     }
   }
   
