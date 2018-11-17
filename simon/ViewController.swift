@@ -65,18 +65,18 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   func checkMove(btn: Int){
     //prevents index out of bound by possible bouncing and out of game presses
     if move>moves.count-1{
-      handOver()
+      handOver() // handover the turn to the computer
       return
     }
     
-    if btn == moves[move]{
-      if move == moves.count-1
+    if btn == moves[move]{ // button pressed matches the step in sequence
+      if move == moves.count-1 //whole sequence is correct
       {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-          self.handOver()
+          self.handOver() //handover the turn to the computer
         }
       }
-      move += 1
+      move += 1 // test the next step in the sequence
     } else {
       score(score: level, gameover: true)
       reset()
@@ -111,8 +111,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   }
   
   func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-    
-    if !isPlayersMove{
+    if !isPlayersMove{ // let the computer play the next button of his sequence
       playSequence()
     }
   }
@@ -144,7 +143,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
     }
     else {
       lblScore.text = "FAILED AT LEVEL: \(level)"
-      if (level == highScore){
+      if (level == highScore){ // only safe if a new highscore is reached
         UserDefaults.standard.set(highScore, forKey: "HIGHSCORE")
       }
       reset()
