@@ -17,12 +17,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   var isPlayersMove: Bool! = false
   
   var level: Int = 1
-  
   var highScore: Int = 0
   
   var player: AVAudioPlayer!
   
   var pushed: Int = 0
+  var mulSpeed: Int = 4
+  var didThrottle: Bool = false
   
   @IBOutlet weak var lblScore: UILabel!
   
@@ -42,15 +43,35 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   
   @IBAction func pushButtonPressed(_ sender: UIButton){
     pushed = sender.tag
-    //let  c =  sender.backgroundColor
+   
     sender.setImage(UIImage(named: "\(sender.tag)p"), for: .normal)
     playSound(btn: sender.tag)
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+   
+    let mul = getSpeedMultiplier()
+    DispatchQueue.main.asyncAfter(deadline: .now() + Double(mul)*0.1) {
       sender.setImage(UIImage(named: "\(sender.tag)"), for: .normal)
       if self.isPlayersMove{
         self.checkMove(btn: sender.tag)
+      } else {
+        self.playSequence()
       }
     }
+    
+  }
+  
+  func getSpeedMultiplier() -> Int {
+    var mul = mulSpeed
+    if !isPlayersMove {
+      if moves.count % 7 == 0 && mulSpeed > 1 && !didThrottle {
+        didThrottle = true
+        mulSpeed -= 1
+        mul = mulSpeed
+      }
+    }
+    else {
+      mul = 1
+    }
+    return mul
   }
   
   func handOver(){
@@ -111,12 +132,17 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   }
   
   func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    //replaced with timer deligate in pushButton action, in order to increase
+    //game speed
+    /*
     if !isPlayersMove{ // let the computer play the next button of his sequence
       playSequence()
     }
+   */
   }
   
   func computersMove() {
+    didThrottle = false
     playersTurn(value: false)
     moves.append( Int.random(in: 0 ... 3) )
     move = 0
@@ -152,6 +178,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   
   func reset() {
     level = 1
+    mulSpeed = 4
+    didThrottle = false
     moves=[]
     enablePushButtons(value: false)
     btnStart.isEnabled = true
