@@ -22,7 +22,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   var player: AVAudioPlayer!
   
   var pushed: Int = 0
-  var mulSpeed: Int = 4
+  var mulSpeed: Int = 4 // start slow
   var didThrottle: Bool = false
   
   @IBOutlet weak var lblScore: UILabel!
@@ -43,10 +43,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   
   @IBAction func pushButtonPressed(_ sender: UIButton){
     pushed = sender.tag
-   
+    
     sender.setImage(UIImage(named: "\(sender.tag)p"), for: .normal)
     playSound(btn: sender.tag)
-   
+    
     let mul = getSpeedMultiplier()
     DispatchQueue.main.asyncAfter(deadline: .now() + Double(mul)*0.1) {
       sender.setImage(UIImage(named: "\(sender.tag)"), for: .normal)
@@ -135,10 +135,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
     //replaced with timer deligate in pushButton action, in order to increase
     //game speed
     /*
-    if !isPlayersMove{ // let the computer play the next button of his sequence
-      playSequence()
-    }
-   */
+     if !isPlayersMove{ // let the computer play the next button of his sequence
+     playSequence()
+     }
+     */
   }
   
   func computersMove() {
@@ -150,11 +150,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
   }
   
   func playSequence() {
-    if move <= moves.count-1 {
-      pushButtons[moves[move]].sendActions(for: .touchUpInside)
-      move += 1
-    } else {
-      playersTurn(value: true)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.04) {
+      if self.move <= self.moves.count-1 {
+        self.pushButtons[self.moves[self.move]].sendActions(for: .touchUpInside)
+        self.move += 1
+      } else {
+        self.playersTurn(value: true)
+      }
     }
   }
   
@@ -162,7 +164,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate
     if !gameover {
       lblScore.text = "TRY LEVEL: \(level)"
       lblHighScore.text = "High Score: \(highScore)"
-
+      
       if (level > highScore){
         highScore = level
       }
