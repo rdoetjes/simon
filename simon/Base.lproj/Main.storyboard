@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,9 +35,6 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyo-Vr-EvE">
                                                         <rect key="frame" x="0.0" y="0.0" width="185" height="272"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="185" id="obc-2h-gPe"/>
-                                                        </constraints>
                                                         <state key="normal" image="0.png"/>
                                                         <connections>
                                                             <action selector="pushButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P8Z-l6-3cn"/>
@@ -50,18 +48,12 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="Fyo-Vr-EvE" firstAttribute="baseline" secondItem="8Xk-Jp-evU" secondAttribute="baseline" id="M7p-xi-77b"/>
-                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="M9v-zf-YtM">
                                                 <rect key="frame" x="0.0" y="277" width="375" height="271.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hca-4H-MeN">
                                                         <rect key="frame" x="0.0" y="0.0" width="185" height="271.5"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="185" id="hK9-bd-AI5"/>
-                                                        </constraints>
                                                         <state key="normal" image="3.png"/>
                                                         <connections>
                                                             <action selector="pushButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3gO-2s-DfO"/>
@@ -75,9 +67,6 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="hca-4H-MeN" firstAttribute="top" secondItem="qhe-Vq-CPl" secondAttribute="top" id="NAF-ia-V8D"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
